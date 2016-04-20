@@ -6,12 +6,25 @@
 Welcome to manote's documentation!
 ==================================
 
-Contents:
+.. toctree::
+   :caption: Z Note
+   :maxdepth: 1
+   :glob:
+
+   z/*
 
 .. toctree::
-   :maxdepth: 2
+   :caption: C++ Note
+   :maxdepth: 1
+   :glob:
 
+   cpp/*
 
+.. toctree::
+   :caption: Test
+
+   test
+   inbox
 
 Indices and tables
 ==================
@@ -19,4 +32,3 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
