@@ -49,3 +49,22 @@ ltrace和strace
 
     * PGP
         TBD
+
+SSH
+    * ssh-copy-id 可以将生成的公钥推送到主机上
+    * ~/.ssh/config
+
+      连接共享配置::
+
+        ControlMaster auto
+        ControlPath /tmp/ssh_mux_%h_%p_%r
+
+      长连接(即使所有客户端关闭, 也在一定时间内保持连接)::
+
+        ControlPersist 4h  # 长连接
+
+添加自己的Rexx库
+    * 系统会从SYSEXEC, SYSPROC这两个DD里寻找Rexx命令. 要添加自己的Rexx库, 就需要添加到这两个DD上. 通常选择SYSEXEC.
+    * 执行下面的TSO命令添加自己的Rexx库:
+        * ``TSO ALTLIB DEACTIVATE APPLICATION(EXEC)``
+        * ``TSO ALTLIB ACTIVATE APPLICATION(EXEC) DATASET('your.rexx.lib')``
